@@ -1,0 +1,171 @@
+JavaScript
+	const and let
+	Arrow Functions: 
+		let sayName = () => {}
+	Interpolation:
+		`i  love ${string}`; //works with functions that return strings
+		let html = `<p>hello</p>`;
+	Selectors
+		querySelector();
+		document.getElementById();
+		document.getElementsByClassName();
+	Getting and Setting
+		Element.className
+		Element.style.property
+		Element.textContent
+		Element.innerText
+		Element.innerHTML
+		Element.tagName
+		Element.setAttribute();
+	Adding Elements
+		document.createElement('li');
+		Node.appendChild(element);
+		Node.removeChild(ChildElement);
+		Node.insertBefore(element, ChildElement)
+	Getting Input
+		input.value;
+	setTimeout()
+	EventListeners
+		Element.addEventListener('click', () => {
+			console.log('hello');
+		});
+	Event Delegation
+		Element.addEventListener('click', (e) => {
+			console.log(e.target);
+		});
+		e.preventDefault();
+	On Load
+		document.addEventListener('DOMContentLoaded', () =>{
+			everything js
+		});
+	Traversing
+		Element.parentNode
+		Element.previousElementSibling
+		Element.children
+		Element.firstElementChild
+	Forms
+		focus();
+	Objects
+		keys
+		.methods();
+	Classes
+		new constructors()
+		.getters
+		setters()
+	Array Methods
+		.forEach();
+		.filter(arrayItem => {true/false});
+		.map(arrayItem => {transformation});
+		.reduce((acc, arrayItem) => {}, acc start value);
+	Strings
+		.split()
+	AJAX
+		let xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState === 4 && xhr.status === 200){
+				console.log(JSON.parse(xhr.responseText));
+			}
+		};
+		xhr.open('GET','link');
+		xhr.send();
+	JSON
+		[
+		{"key":"string"},
+		{"key":"value"},
+		{"key":"double quotes"}
+		]
+	Fetch API
+		https://teamtreehouse.com/library/what-is-the-fetch-api
+	Promises
+		https://teamtreehouse.com/library/understanding-promises-in-javascript
+	JQuery
+		$('selector')
+			$.hide();
+			$.show();
+			$.delay();
+			$.text();
+			$.html();
+			$.val();
+			$.css('property', 'value');
+			$.toggle();
+			$.toggleClass();
+			$.click();
+			$.on('event', function(){
+				//event.preventDefault();
+				console.log($(this));
+			})
+			const $newElement = $('<p>hello</p>');
+			$.apend($newElement);
+			$.prepend($newElement);
+			$.next();
+			$.attr();
+			$.addClass();
+			$.removeClass();
+			$.each(function(index,element){
+				console.log(index + ", " + element)
+			});
+			$.find(element);
+		selectors
+			$('Element:property');
+			$('Element[attr^="startsWith"]');
+			$('Element[attr$="endsWith"]');
+		plugins
+			sticky.js
+			slick.js
+
+CSS
+	Query Selectors
+	Element[attrName="val"]
+	combinators
+		> direct children 
+		+ only the next sibling after
+		~ all siblings after
+	pseudo-class selectors
+		Element:last-child
+		Element:first-child
+		:only-child
+		:empty
+		Element[attr^="startsWith"]
+		Element[attr$="endsWith"]
+		Element[attr*="contains"]
+		:state
+		Element:nth-child(odd/even/(-)an+b/)
+		Element:nth-of-type()
+		Element:nth-last-of-type()
+		:root
+		:target
+		Element:not()
+	pseudo-elements selectors
+		::first-line
+		::first-letter
+		::before/after{
+			content:""/url();
+		}
+	Transformations
+		transition-duration
+		transition-property
+	3d
+		perspective
+		rotate3d(x,y,z,deg);
+HTML
+	<form></form>
+		<fieldset></fieldset>
+			<legend></legend>
+			<input type="" id="" name="">
+			<textarea id="" name=""></textarea>
+			<button type=""></button
+			<label for=""></label>
+			<select id="" name=""></select>
+				<optgroup label=""></optgroup>
+					<option value=""></option>
+			input
+Git
+	status
+	add
+	rm
+	mv
+	remote
+	commit -m
+	push
+	pull
+	log
