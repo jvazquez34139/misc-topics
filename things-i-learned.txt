@@ -59,6 +59,13 @@ JavaScript
 		.reduce((acc, arrayItem) => {}, acc start value);
 	Strings
 		.split()
+	Promises
+		const prom = new Promise(resolve => {
+			resolve("returns this value");
+		}).then();
+		prom.then(value => {
+			console.log(value);
+		}).catch(reject);
 	AJAX
 		let xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function(){
@@ -68,16 +75,17 @@ JavaScript
 		};
 		xhr.open('GET','link');
 		xhr.send();
+	Fetch API
+		fetch(link)
+			.then(response => response.json())
+			.then(data => console.log(data))
+			.catch(error => console.log(error));
 	JSON
 		[
 		{"key":"string"},
 		{"key":"value"},
 		{"key":"double quotes"}
 		]
-	Fetch API
-		https://teamtreehouse.com/library/what-is-the-fetch-api
-	Promises
-		https://teamtreehouse.com/library/understanding-promises-in-javascript
 	JQuery
 		$('selector')
 			$.hide();
@@ -109,6 +117,12 @@ JavaScript
 			$('Element:property');
 			$('Element[attr^="startsWith"]');
 			$('Element[attr$="endsWith"]');
+		AJAX
+			$.load(link);
+			$.get(link,data,callback);
+			$.post(link, data,callback);
+			$.getJSON(link, function(res));
+			$.ajax(link,{data});
 		plugins
 			sticky.js
 			slick.js
