@@ -1,7 +1,21 @@
 JavaScript
 	const and let
+	Functions	
+		function saySomething(arg, arg2 = 5, ...arg3){
+			console.log(arg, arg2);
+			console.log(arg3);
+		}
+		function saySomething2(arg, arg2){
+			//conditional default not preferable
+			let arg2 = arg2 || 5
+			console.log(arg, arg2);
+		}
+		//deconstructional default preferable
+		function saySomething3({arg, arg2 = 5} = {}, callback){
+			callback(arg, arg2);
+		}
 	Arrow Functions: 
-		let sayName = () => {}
+		let sayName = (params) => {}
 	Interpolation:
 		`i  love ${string}`; //works with functions that return strings
 		let html = `<p>hello</p>`;
@@ -48,17 +62,87 @@ JavaScript
 	Objects
 		keys
 		.methods();
+		//in an object
+		for (let teacher in teachers){ break }
+		destructuring
+			usefullness:
+				so you dont use 
+				var name = object.name;
+			ex -
+			object = {prop1: 'hello', prop2: 'world', prop3: 324, prop4: { childprop1: "nested"}};
+			//gives object props it's own variable
+			//using format <keyName: new variableName>
+			//separated by commas
+			{prop1: item1, prop3: item2, prop4: {childprop1: nestedProp}} = object;
+			console.log(item1, item2, item3, nestedProp);
+			//outcome: hello 324 undefined
+			-
 	Classes
 		new constructors()
 		.getters
 		setters()
-	Array Methods
+	Arrays
+		Array.from(set/map);
+			//makes an array from any itterable
+		spread opperator
+			...
+			concats to an array
+			or separates array into idividual arguments
+		destructuring
+			usefullness:
+				so you dont use
+				var first = racers[0];
+				var second = racers[1];
+				var third = racers[2];
+				var noPrize = [];
+					for(i = 3; i < racers.length; i++){noPrize.push(racers[i])};
+			ex-
+			racers = [alex,josh,alen,eric,joe,rick,bob,tom];
+			//in respective order
+			[first,second,third,...noPrize] = racers
+			console.log(first, second, third);
+			console.log(noPrize);
+			//outcome: alex josh alen
+					   [eric,joe,rick,bob,tom]
+			-
 		.forEach();
+		//of an array
+		for (let teacher of teachers){ break }
 		.filter(arrayItem => {true/false});
 		.map(arrayItem => {transformation});
 		.reduce((acc, arrayItem) => {}, acc start value);
+	Sets
+		new Set();
+		new Set(array);
+		usefulness:
+			holds unique values only,
+			wont take doubles of something already in Set()
+			can be used to filter out any doubles in data
+			is an iterable
+		.add();
+			//all adds data to set
+		.delete(data);
+			//removes data from set
+		.clear();
+			//deletes all data from a set
+		.has();
+	Maps
+		new Map();
+		usefulness:
+			Map{
+				key => { prop: val,}
+			}
+		.set('key', object);
+		.get('key');
+		.delete();
+		.clear();
+		.has();
 	Strings
-		.split()
+		.split(" ");
+		.substring(0,4);
+		.startsWith();
+		.endsWith();
+		.includes('string');
 	Promises
 		const prom = new Promise(resolve => {
 			resolve("returns this value");
@@ -104,9 +188,10 @@ JavaScript
 			})
 			const $newElement = $('<p>hello</p>');
 			$.apend($newElement);
+			$.insertAfter($afterThis);
 			$.prepend($newElement);
 			$.next();
-			$.attr();
+			$.attr(attr, value);
 			$.addClass();
 			$.removeClass();
 			$.each(function(index,element){
