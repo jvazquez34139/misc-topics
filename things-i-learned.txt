@@ -10,7 +10,7 @@ JavaScript
 			let arg2 = arg2 || 5
 			console.log(arg, arg2);
 		}
-		//deconstructional default preferable
+		//destructing default preferable
 		function saySomething3({arg, arg2 = 5} = {}, callback){
 			callback(arg, arg2);
 		}
@@ -77,10 +77,19 @@ JavaScript
 			console.log(item1, item2, item3, nestedProp);
 			//outcome: hello 324 undefined
 			-
+		static methods
+			can only be referenced through the class
+			dont need to reference a specific instance
+			to call the function
 	Classes
 		new constructors()
 		.getters
 		setters()
+		Extensions
+			class Example extends Super
+			to reference "this"	there must call super({})
+			in child constructor
+			super.prop ---lets you access props of super
 	Arrays
 		Array.from(set/map);
 			//makes an array from any itterable
@@ -263,8 +272,71 @@ Git
 	add
 	rm
 	mv
-	remote
+	remote add origin githublink
 	commit -m
-	push
+	push origin master
+	branch branchName
+	checkout -b branchName
+	push origin branchName
 	pull
 	log
+	.gitignore file for directories/files to ignore
+	https://guides.github.com/features/mastering-markdown/
+NodeJS
+	require('./');
+	try {} catch {}
+	request
+		.statusCode;
+		.url;
+		.method;
+		.on();
+			end
+			data
+	response
+		.writeHead(200, "Content-Type": "text/html");
+		.write();
+		.end();
+	http
+		server = http.createServer((request,response) => {
+
+		})
+		server.listen(portNum);
+	fs
+		.readFileSync('path',{encoding: 'utf8'});
+		.readFile('path',callback(err,data));
+		.writeFileSync('toWhere.txt', 'content/data');
+		.writeFile('toWhere', 'content/data', callback(err));
+		.mkdirSync('folderName');
+		.mkdir('folderName', callback());
+		.rmdirSync('folderName');
+			dir must be empty
+		.rmdir('folder');
+		.existsSync('whichFile.txt');
+		.unlink('whichFile.txt');
+	events
+		new events.EventEmitter();
+		.on('eventEmitted', callback);
+		.emit('eventToEmit',"dataForCallback");
+	util
+		.inherits(what, whatToInherit);
+	querystring
+		.parse(request.data.toString);
+	module.exports.name = functionName;
+	statusCodes
+		https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection
+		200 ok
+		404 missing or not found
+		303 redirecting
+	mediaTypes
+		https://www.iana.org/assignments/media-types/media-types.xhtml
+NPM
+	install
+		NODE_ENV=production npm install
+			for installing only dependencies needed to 
+			run and not dev dependencies
+		-g global
+		--save 
+			to store as dependency in package.json
+	init
+		package.json
+
