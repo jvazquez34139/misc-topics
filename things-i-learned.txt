@@ -339,4 +339,55 @@ NPM
 			to store as dependency in package.json
 	init
 		package.json
-
+Express
+	app = express();
+		.set('view engine', 'pug');
+		.get('route', (req, res));
+	res
+		.send('data');
+		.render('template');
+pug
+	res.render('template', {options});
+	p= variable
+	if condition
+	#{interpolatedVar}
+	include
+	block content
+	extends
+Mocha Chai
+	describe('titleOfTest/unit', function);
+		before(static model/data for following "it"'s);
+		beforeEach(model/data rests for each test.);
+		after
+		afterEach
+		it('description of test', expectFuntion);
+			expect(function)
+				.to.be
+					.false/true
+					.empty
+				.deep
+					.equal
+				.not.be
+					.empty
+	--watch ./test ./funcDir
+		npm 'scripts:{
+			"test:watch": "mocha --watch ./test ./funcDir"
+		''
+Sass
+	--watch scss:css
+		--style 
+			compressed(recommended for final production)
+			compact
+			extended
+	_partial.scss
+	%cssblock{}
+		@extend 'cssblock'
+	$variable : value
+	#{interpolation}
+	@mixin cssFunction(params: null){
+		css block;
+		style: params;	
+	}
+		@include cssFunction();
+Gulp
+	
