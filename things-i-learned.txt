@@ -1,6 +1,6 @@
 JavaScript
 	const and let
-	Functions	
+	Functions
 		function saySomething(arg, arg2 = 5, ...arg3){
 			console.log(arg, arg2);
 			console.log(arg3);
@@ -14,7 +14,7 @@ JavaScript
 		function saySomething3({arg, arg2 = 5} = {}, callback){
 			callback(arg, arg2);
 		}
-	Arrow Functions: 
+	Arrow Functions:
 		let sayName = (params) => {}
 	Interpolation:
 		`i  love ${string}`; //works with functions that return strings
@@ -66,7 +66,7 @@ JavaScript
 		for (let teacher in teachers){ break }
 		destructuring
 			usefullness:
-				so you dont use 
+				so you dont use
 				var name = object.name;
 			ex -
 			object = {prop1: 'hello', prop2: 'world', prop3: 324, prop4: { childprop1: "nested"}};
@@ -225,7 +225,7 @@ CSS
 	Query Selectors
 	Element[attrName="val"]
 	combinators
-		> direct children 
+		> direct children
 		+ only the next sibling after
 		~ all siblings after
 	pseudo-class selectors
@@ -332,11 +332,12 @@ NodeJS
 NPM
 	install
 		NODE_ENV=production npm install
-			for installing only dependencies needed to 
+			for installing only dependencies needed to
 			run and not dev dependencies
 		-g global
-		--save 
+		--save
 			to store as dependency in package.json
+			-dev
 	init
 		package.json
 Express
@@ -375,7 +376,7 @@ Mocha Chai
 		''
 Sass
 	--watch scss:css
-		--style 
+		--style
 			compressed(recommended for final production)
 			compact
 			extended
@@ -386,8 +387,39 @@ Sass
 	#{interpolation}
 	@mixin cssFunction(params: null){
 		css block;
-		style: params;	
+		style: params;
 	}
 		@include cssFunction();
 Gulp
-	
+	pipeable because of streams
+	.task("taskName", task);
+	.series(firstTask, secondTask);
+		//synchronus
+	.parallel(taskA,taskB,taskC);
+		//async
+	.src("fileName or [fileNames]");
+		//what to read
+	.dest("folder")
+		//where to place
+	.watch(['files'], parallel/series('task-to-run-when-change'))
+		'core/**/*.ext'
+		core/(subdirs or files)/(allWithThis).ext
+	Example:
+		//src('sample.js').pipe(gulp.dest('jsFolder'));
+	Res:
+		concatening files
+			gulp-concat
+		js minifying
+			gulp-uglify
+		css minifying
+			gulp-clean-css
+		image compression
+			gulp-imagemin
+		sass compiler
+			gulp-sass
+		maps
+			gulp-sourcemaps
+		deleting
+			del
+		local http server with live livereload
+			gulp-connect
