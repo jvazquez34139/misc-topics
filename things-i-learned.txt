@@ -20,7 +20,7 @@ JavaScript
 		`i  love ${string}`; //works with functions that return strings
 		let html = `<p>hello</p>`;
 	Selectors
-		querySelector();
+		document.querySelector();
 		document.getElementById();
 		document.getElementsByClassName();
 	Getting and Setting
@@ -159,6 +159,20 @@ JavaScript
 		prom.then(value => {
 			console.log(value);
 		}).catch(reject);
+
+		exampv2:
+			let p = new Promise((resolve, reject) => {
+			  let a = 1 + 1;
+			  if(a == 2){
+			    resolve('success');
+			  }else{
+			     reject('failed');
+			  }
+			}).then( (message) => {
+			  console.log('this is in then ' + message);
+			}).catch( (message => {
+			  console.log('this is in fail ' + message);
+			}));
 	AJAX
 		let xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function(){
@@ -423,3 +437,171 @@ Gulp
 			del
 		local http server with live livereload
 			gulp-connect
+React
+
+RegEx
+	regex.test(string);
+	string.match(regex);
+	flags
+		g
+			all references
+		i
+			case insensitive
+	/string/
+		literal
+	/[ranges]/
+		a-zA-Z0-9
+		^
+			excludes
+	/./
+Bootstrap
+	headings
+		h1
+		h2
+		h3
+		h4
+		h5
+		h6
+	display
+		display-1
+		display-2
+		display-3
+		display-4
+	paragraphs
+		lead
+		text-monospace
+	styles
+		font-weight-bold
+		font-weight-normal
+		font-italic
+	transforms
+		text-lowercase
+		text-uppercase
+		text-capitalize
+	blockquotes
+		blockquote
+		blockquote-footer
+	list
+		list-unstyled
+		list-inline
+			list-inline-items
+	alignment
+		text-left
+		text-center
+		text-right
+		text-responsiveSize-right
+	display type
+		d-block
+		d-inline
+		d-inline-block
+	float
+		float-left
+		float-right
+		float-none
+		float-responsiveSize-right
+		clearfix
+	fixed positions
+		fixed-top
+		fixed-bottom
+		sticky-top
+		sticky-bottom
+	margins
+		mb-genericSize
+		mt-genericSize
+		ml-genericSize
+		mr-genericSize
+		mx-genericSize
+			mx-auto
+		my-genericSize
+		m-genericSize
+	padding
+		pb-genericSize
+		pt-genericSize
+		pl-genericSize
+		pr-genericSize
+		px-genericSize
+		py-genericSize
+		p-genericSize
+	borders
+		border
+		border-top
+		border-bottom
+		border-right
+		border-left
+		border-defaultColors
+		rounded
+		rounded-top
+		rounded-bottom
+		rounded-right
+		rounded-left
+		rounded-circle
+		rounded-0
+	buttons
+		dropdown
+		dropdown-toggle
+			//set data-toggle="dropdown"
+		dropdown-divider
+			//set this class to a div
+		btn
+		btn-toolbar
+		btn-group
+		btn-group-verticle
+		btn-defaultColors
+		btn-outline-defaultColors
+		btn-lg
+		btn-sm
+		btn-block
+		active
+		disabled
+	navs
+		navbar
+		navbar-expand-responsiveSizes
+		navbar-defaultColors
+		navbar-brand
+		navbar-nav
+			//ul
+		nav-item
+			//li
+		nav-link
+			//a
+		navbar-toggler
+			//data-toggle="collapse"
+			//data-target="#"
+			//div.collapse.navbar-collapse
+	sizing
+		w-percents
+		h-percents
+	percents
+		25
+		50
+		75
+		100
+		auto
+	generic sizes
+		1
+		2
+		3
+		4
+		5
+		6
+	responsive sizes
+		sm
+		md
+		lg
+		xl
+	default colors
+		primary
+		secondary
+		success
+		info
+		warning
+		danger
+		light
+		dark
+		muted
+		black-50
+		white-50
+
+places for jobs
+	-we work remotely
+	-stack overflow
